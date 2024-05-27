@@ -6,6 +6,10 @@ const multer = require("multer");
 const { uploadImageToCloudinary } = require("./imageUploader");
 require("dotenv").config();
 const path = require("path");
+
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname, "../e-commerce-frontend/build");
+app.use(express.static(buildpath));
 const cors = require("cors");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
