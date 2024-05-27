@@ -82,7 +82,7 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
         {localStorage.getItem("auth-token") ? (
-          <Link to="/login">
+          <Link to="/">
             <button
               onClick={() => {
                 localStorage.removeItem("auth-token");
