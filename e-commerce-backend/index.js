@@ -7,9 +7,6 @@ const { uploadImageToCloudinary } = require("./imageUploader");
 require("dotenv").config();
 const path = require("path");
 
-const _dirname = path.dirname("");
-const buildpath = path.join(_dirname, "../e-commerce-frontend/build");
-app.use(express.static(buildpath));
 const cors = require("cors");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
@@ -280,4 +277,8 @@ app.post("/removeproduct", async (req, res) => {
 app.listen(port, (error) => {
   if (!error) console.log("Server Running on port " + port);
   else console.log("Error : " + error);
+});
+
+app.get("/", (req, res) => {
+  res.send("sever is ready");
 });
