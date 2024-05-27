@@ -19,7 +19,7 @@ const LoginSignup = () => {
     const vemail = location.pathname.split("/").at(-1);
     formData.vemail = vemail;
     let dataObj;
-    await fetch("http://localhost:4000/login", {
+    await fetch("https://buylows.onrender.com/login", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -42,7 +42,7 @@ const LoginSignup = () => {
 
   const signup = async () => {
     let dataObj;
-    await fetch("http://localhost:4000/signup", {
+    await fetch("https://buylows.onrender.com/signup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
