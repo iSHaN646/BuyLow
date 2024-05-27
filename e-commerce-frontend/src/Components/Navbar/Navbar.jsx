@@ -82,14 +82,15 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
         {localStorage.getItem("auth-token") ? (
-          <button
-            onClick={() => {
-              localStorage.removeItem("auth-token");
-              navigate("/login");
-            }}
-          >
-            Logout
-          </button>
+          <Link to="/login">
+            <button
+              onClick={() => {
+                localStorage.removeItem("auth-token");
+              }}
+            >
+              Logout
+            </button>
+          </Link>
         ) : (
           <Link to="/login" style={{ textDecoration: "none" }}>
             <button>Login</button>
